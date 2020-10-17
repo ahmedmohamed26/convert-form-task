@@ -1,15 +1,11 @@
 .home{
     padding: 20px 0;
     form{
- 
         .title-field{
             text-transform: capitalize;
         }
         .form-control{
             resize: none;
-            option{
-                text-transform: capitalize;
-            }
             &:focus{
                 box-shadow: none;
             }

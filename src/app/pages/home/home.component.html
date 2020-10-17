@@ -1,22 +1,65 @@
 <section class="home">
-  <form>
+  <form >
     <div class="row">
-      <div class="col-md-6">
-          <div class="form-group" *ngFor="let input of obj.text; let i = index">
-            <label [attr.for]="input.label + '_' + i">{{input.label}}</label>
-            <input type="text" class="form-control" [id]="input.label + '_' + i" [name]="input.label + '_' + i"
-              [value]='input.value' />
-          </div>
+      <div class="col-md-6 pl-0">
+        <!-- <ng-container *ngIf="obj?.text?.length && obj.text typeof 'Array'"> -->
+        <div *ngFor="let input of obj.inputs; let i = index">
+          <ng-container *ngIf="input.type == 'text' || input.type == 'password' || input.type == 'email'">
+            <div class="form-group">
+              <label class="title-field font-weight-bold" [attr.for]="input.label + '_' + i">{{input.label}}</label>
+              <input [type]="input.type" class="form-control" [id]="input.label + '_' + i"
+                [name]="input.label + '_' + i" [value]='input.value' />
+            </div>
+          </ng-container>
+          <ng-container *ngIf="input.type == 'checkbox'">
+            <div class="mt-2">
+              <label class="title-field font-weight-bold">{{input.label}}</label>
+            </div>
+            <div class="form-check  form-check-inline" *ngFor='let button of input.checkBoxButtons; let i = index'>
+              <input type="checkbox" class="form-check-input" [id]="button.name + '_' + i"
+                [name]="button.name + '_' + i" [value]='button.id' />
+              <label class="title-field form-check-label" [attr.for]="button.name + '_' + i">{{button.name}}</label>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="input.type == 'radio'">
+            <div class="mt-2">
+              <label class="title-field font-weight-bold">{{input.label}}</label>
+            </div>
+              <div class="form-check  form-check-inline" *ngFor='let button of input.radioButtons; let i = index'>
+                <input type="radio" class="form-check-input" [id]="button.name + '_' + i" [name]="input.nameGender"
+                  [value]='button.id' />
+                <label class="title-field form-check-label" [attr.for]="button.name + '_' + i">{{button.name}}</label>
+              </div>
+          </ng-container>
+          <ng-container *ngIf="input.type == 'select'">
+            <div class="form-group">
+              <label class="title-field mt-2 font-weight-bold" [attr.for]="input.label + '_' + i">{{input.label}}</label>
+              <select class="form-control" [id]="input.label + '_' + i" [name]="input.label + '_' + i"
+                [value]='input.value'>
+                <option *ngFor='let option of input.options'>{{option.name}}</option>
+              </select>
+            </div>
+          </ng-container>
+        </div>
       </div>
       <!-- col -->
+
+
+
+
+
       <div class="col-md-6">
         <div class="form-group">
           <label class="title-field" for="exampleFormControlTextarea1">Example textarea</label>
-          <textarea type='text' class="form-control" id="exampleFormControlTextarea1" rows="15" [value]="obj"
+          <textarea type='text' class="form-control" id="exampleFormControlTextarea1" rows="15" [value]="obj | json"
             (change)="getNewObj($event.target.value)"></textarea>
         </div>
       </div>
       <!-- col -->
+    </div>
+    <div class="row mt-2">
+      <button class="btn btn-primary mr-2"  type="button" (click)="addForm()">Submit</button>
+      <button class="btn btn-danger" type="button">Cancel</button>
     </div>
   </form>
 </section>

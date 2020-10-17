@@ -8,19 +8,23 @@ import { Form } from 'src/app/shared/models/form.model';
 })
 export class HomeComponent implements OnInit {
   obj: Form = <Form>{};
-  // obj = {};
   constructor() {}
 
   ngOnInit(): void {}
 
   getNewObj(objValue) {
+    console.log(this.obj);
     if (objValue) {
-      console.log(objValue);
-      let x = JSON.parse(JSON.stringify(objValue))
-      this.obj = JSON.parse(x);
-      console.log(x);
-      console.log(this.obj);
-      debugger;
+      eval('this.obj =' + objValue);
     }
   }
+
+
+
+
+    // alert(this.obj)
+  addForm() {
+    // alert(this.obj.inputs.map(x => x.value))
+    console.log(this.obj)
+    }
 }

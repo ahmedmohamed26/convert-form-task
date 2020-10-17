@@ -1,0 +1,25 @@
+<section class="home">
+  <form>
+    <div class="row">
+      <div class="col-md-6">
+        <!-- <ng-container *ngIf="obj?.text?.length && obj.text typeof 'Array'">
+          <div class="form-group" *ngFor="let item of formObject.inputs; let i = index">
+            <label [attr.for]="input.label + '_' + i">{{item.lable}}</label>
+            <input [type]='item.type' [value]='item.value' class="form-control" [id]="input.label + '_' + i"
+              [name]="input.label + '_' + i" />
+          </div>
+        </ng-container> -->
+
+      </div>
+      <!-- col -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="title-field" for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea type='text' class="form-control" id="exampleFormControlTextarea1" rows="15" [value]="textAreaString"
+            (change)="getNewObj($event.target.value)"></textarea>
+        </div>
+      </div>
+      <!-- col -->
+    </div>
+  </form>
+</section>

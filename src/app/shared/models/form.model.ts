@@ -1,9 +1,9 @@
 export interface Form {
  
-        text: [
+        inputs: [
           {
             label: string,
-            value:string
+            value:any
           }
         ]
  
