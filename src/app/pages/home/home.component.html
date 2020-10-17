@@ -1,0 +1,22 @@
+<section class="home">
+  <form>
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group" *ngFor="let input of obj.text; let i = index">
+            <label [attr.for]="input.label + '_' + i">{{input.label}}</label>
+            <input type="text" class="form-control" [id]="input.label + '_' + i" [name]="input.label + '_' + i"
+              [value]='input.value' />
+          </div>
+      </div>
+      <!-- col -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="title-field" for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea type='text' class="form-control" id="exampleFormControlTextarea1" rows="15" [value]="obj"
+            (change)="getNewObj($event.target.value)"></textarea>
+        </div>
+      </div>
+      <!-- col -->
+    </div>
+  </form>
+</section>

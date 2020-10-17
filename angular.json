@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "trufla-task"
+    }
+  },
+  "defaultProject": "trufla-task",
+  "cli": {
+    "analytics": "22d858c7-4386-4161-a2cd-00ecc496160d"
+  }
 }

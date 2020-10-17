@@ -1,0 +1,14 @@
+.home{
+    padding: 20px 0;
+    form{
+        .title-field{
+            text-transform: capitalize;
+        }
+        .form-control{
+            resize: none;
+            &:focus{
+                box-shadow: none;
+            }
+        }
+    }
+}
