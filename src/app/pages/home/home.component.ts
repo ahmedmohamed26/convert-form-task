@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Form } from 'src/app/shared/models/form.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -23,8 +24,11 @@ export class HomeComponent implements OnInit {
 
 
     // alert(this.obj)
-  addForm() {
-    // alert(this.obj.inputs.map(x => x.value))
+  onSubmit(serviceForm: NgForm) {
     console.log(this.obj)
-    }
+    console.log(serviceForm.value);
+
+      // console.log(JSON.stringify(serviceForm));
+  }
 }
+// let x = JSON.stringify(this.DataForm.value)
