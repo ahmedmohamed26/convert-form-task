@@ -43,11 +43,6 @@
         </ng-container>
       </div>
       <!-- col -->
-
-
-
-
-
       <div class="col-md-6">
         <div class="form-group">
           <label class="title-field" for="exampleFormControlTextarea1">Example textarea</label>
@@ -57,10 +52,13 @@
       </div>
       <!-- col -->
     </div>
+    <!-- row -->
+
     <div class="row mt-2 mb-2" *ngIf='obj.inputs.length'>
       <button class="btn btn-primary mr-2" [disabled]="!formInfo.dirty">Submit</button>
       <button class="btn btn-danger" type="button" (click)='clearForm()'>Cancel</button>
     </div>
+    <!-- row -->
   </form>
 
   <ng-container *ngIf='showUserInfo'>

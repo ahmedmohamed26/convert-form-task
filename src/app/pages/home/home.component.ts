@@ -1,6 +1,4 @@
-import { AboutComponent } from './../about/about.component';
 import { Component, OnInit } from '@angular/core';
-import { Form } from 'src/app/shared/models/form.model';
 import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-home',
@@ -8,7 +6,6 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  // obj: Form = <Form>{};
   obj = {
     inputs: [],
   };
