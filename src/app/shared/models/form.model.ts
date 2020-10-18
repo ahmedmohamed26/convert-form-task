@@ -3,7 +3,8 @@ export interface Form {
         inputs: [
           {
             label: string,
-            value:any
+            value: any,
+            name: string
           }
         ]
  
